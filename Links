@@ -1,0 +1,10 @@
+- Cool website which calculates routes and emissions: https://greentickets.app
+- Site which gives train journeys and states savings of emissions compared to plane: https://loco2.com
+They also explain how they calculate those emissions: https://loco2.com/en/blog/travel-green-calculating-your-carbon-savings
+- The Guardian carbon calculator: https://www.theguardian.com/environment/interactive/2009/oct/20/guardian-quick-carbon-calculator
+- Could possibly use to calculate distance between places: https://english.api.rakuten.net/wirefreethought/api/geodb-cities OR https://english.api.rakuten.net/Distance.to/api/distance
+- Api with trains but only in Belgium so probably not very useful: https://english.api.rakuten.net/pietercolpaert/api/irail
+- Way to calculate emissions: https://aeriaa.com/estimating-aviation-co2-emissions-real-time-big-data/
+- API for public transport. Only available in limited part of world: https://english.api.rakuten.net/skedgo/api/tripgo
+- Not sure if this is the right Google Maps API: https://english.api.rakuten.net/stefan.skliarov/api/GoogleMapsDistanceMatrix
+- API to get emissions flight based on origin and destination: https://www.icao.int/safety/istars/pages/api-data-service.aspx

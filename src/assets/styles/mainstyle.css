@@ -1,0 +1,37 @@
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .column {
+    float: left;
+    padding: 5em;
+    width: 25%;
+    display: block;
+  }
+
+  .column1 {
+    float: left;
+    padding: 5em;
+    width: 25%;
+    display: none;
+  }
+
+  .column3 {
+    float: left;
+    padding: 5em;
+    width: 25%;
+    display: none;
+  }
+
+  .column2 {
+    padding-right: 2em;
+    float: right;
+    width: 75%;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

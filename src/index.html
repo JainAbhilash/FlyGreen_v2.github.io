@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Meeting planning app</title>
+        <link rel="stylesheet" href="assets/styles/sticky-footer-navbar.css" >
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" >
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="assets/bootstrap/js/bootstrap.min.js" ></script>
+    
+        <link href='assets/packages/core/main.css' rel='stylesheet' />
+        <link href='assets/packages/daygrid/main.css' rel='stylesheet' />
+        <link href='assets/packages/timegrid/main.css' rel='stylesheet' />
+        <link href='assets/packages/list/main.css' rel='stylesheet' />
+        <script src='assets/packages/core/main.js'></script>
+        <script src='assets/packages/interaction/main.js'></script>
+        <script src='assets/packages/daygrid/main.js'></script>
+        <script src='assets/packages/timegrid/main.js'></script>
+        <script src='assets/packages/list/main.js'></script>
+        
+        <script src='assets/json/flights.js' ></script>
+        <script src='assets/scripts/helperFunctions.js' ></script>
+        <script src='assets/scripts/moreUselessFunctions.js' ></script>
+        <script src='assets/scripts/eventListeners.js' ></script>
+        <script src='assets/scripts/calendarEvents.js' ></script>
+        <script src='assets/scripts/calendar.js' ></script>
+
+        <link rel="stylesheet" href="assets/styles/mainstyle.css" >
+
+    </head>
+    <body>
+        <div>
+          <!-- A navigation -->
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">POC info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Demo</a>
+            </li>
+          </ul>
+        </div>
+        
+        <main role="main" >
+          <div class="row">
+
+            <!-- Info container -->
+            <div class="column">
+                <h4>Welcome to smart meeting planner</h4>
+                <p>Start by pressing Add calendar event</p>
+              </div>
+
+            <!-- Form for a new calender event -->
+            <div class="column1">
+              <div>  
+                <h5>Now give title and location for the meeting, after click OK</h5>
+                <div class="form-group">
+                  <label for="eventTitle">Event Title</label>
+                  <input class="form-control" id="eventTitle" aria-describedby="titleHelp" placeholder="Enter title" value="Meeting">
+                  <small id="titleHelp" class="form-text text-muted">Title for the event.</small>
+                </div>
+                <div class="form-group">
+                  <label for="eventLocation">Location</label>
+                  <select id="city_select" class="form-control">
+                    <option selected value="">Select from demo countries</option>
+                    <option value="HEL-sky">Helsinki</option>
+                    <option value="AMS-sky">Amsterdam</option>
+                    <option value="MUC-sky">Munich</option>
+                  </select>
+                  <small id="LocationHelp" class="form-text text-muted">Select location (city).</small>                  
+                </div>
+                <div class="form-group">
+                  <button disabled="true" type="submit" id="confirmEventInfo" class="btn btn-primary">Ok</button>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Possible flight to the city -->
+            <div class="column3">
+              <h5 id="locationDescription">Click on the calender to place the meeting.</h5>
+              <h5>Possible flights get populated below once you choose a date</h5>
+              <h5 id="meetingLocation">Booking meeting to {city}</h5>
+              <ul id="possibleFlights">
+              </ul>
+
+              <h4>Going</h4>
+              <table class="table table-hover">
+                <thead>
+                  
+                </thead>
+                <tbody id="goingFlightTable">
+                </tbody>  
+              </table>
+
+              <h4>Returning</h4>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody id="returnFlightTable">
+                </tbody>  
+              </table>
+              
+              <button type="submit" id="confirmFlights" class="btn btn-primary">Book</button>
+              
+            </div>
+  
+
+
+            <!-- Calendar portion -->
+            <div class="column2">
+                <div id='calendar'></div>
+              </div>
+            </div>
+        </main>
+
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+                <span class="text-muted">calendar from: <a href="https://fullcalendar.io/docs" >https://fullcalendar.io/docs</a></span>    
+            </div>  
+            <div class="container">
+                <span class="text-muted">Used APIs:</span>
+            </div>
+            <div class="container">
+                <span class="text-muted"><a href="https://rapidapi.com/skyscanner/api/skyscanner-flight-search" >https://rapidapi.com/skyscanner/api/skyscanner-flight-search</a></span>
+            </div>
+            <div class="container">
+                <span class="text-muted"> <a href="https://rapidapi.com/lihcode/api/lufthansa-open" >https://rapidapi.com/lihcode/api/lufthansa-open</a></span>
+            </div>  
+        </footer>
+    </body>
+</html>
+  

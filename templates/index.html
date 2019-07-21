@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Bootstrap 101 Template</title>
+        <link rel="stylesheet" href="sticky-footer-navbar.css" >
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap/js/bootstrap.min.js" ></script>
+    
+        <link href='packages/core/main.css' rel='stylesheet' />
+        <link href='packages/daygrid/main.css' rel='stylesheet' />
+        <link href='packages/timegrid/main.css' rel='stylesheet' />
+        <link href='packages/list/main.css' rel='stylesheet' />
+        <script src='packages/core/main.js'></script>
+        <script src='packages/interaction/main.js'></script>
+        <script src='packages/daygrid/main.js'></script>
+        <script src='packages/timegrid/main.js'></script>
+        <script src='packages/list/main.js'></script>
+        <script>
+      
+          document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+      
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+              plugins: [ 'interaction', 'timeGrid' ],
+              header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'timeGridWeek'
+              },
+              defaultDate: '2019-06-12',
+              businessHours: true, // display business hours
+              navLinks: false, // can click day/week names to navigate views
+      
+              weekNumbers: true,
+              weekNumbersWithinDays: true,
+              weekNumberCalculation: 'ISO',
+      
+              editable: true,
+              eventLimit: true, // allow "more" link when too many events
+              events: [
+                {
+                  title: 'Meeting, Helsinki ',
+                  start: '2019-06-12T12:00:00',
+                  color: '#ff9f89'
+                },
+                {
+                  title: 'In Finland',
+                  start: '2019-06-12T09:00:00',
+                  end: '2019-06-12T17:00:00',
+                  rendering: 'background',
+                  color: '#ff9f11'
+                },
+
+                {
+                  title: 'Meeting, London ',
+                  start: '2019-06-14T12:00:00',
+                  color: '#4299f5'
+                },
+                {
+                  title: 'In England',
+                  start: '2019-06-14T09:00:00',
+                  end: '2019-06-14T17:00:00',
+                  rendering: 'background',
+                  color: '#42d7f5 '
+                },
+              ]
+            });
+      
+            calendar.render();
+          });
+      
+        </script>
+        <style>
+      
+          body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+          }
+      
+          #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+          }
+      
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Super cool calendar</a>
+            </nav>
+        </header>
+        
+        <main role="main" class="flex-shrink-0">
+            <div id='calendar'></div>
+        </main>
+
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+                <span class="text-muted">calendar from: <a href="https://fullcalendar.io/docs" >https://fullcalendar.io/docs</a></span>
+            </div>  
+        </footer>
+    </body>
+</html>
+  
